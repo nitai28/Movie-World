@@ -1,5 +1,5 @@
-import React, {useState, useEffect} from 'react'
-import {StyleSheet, View, Text, TouchableOpacity, requireNativeComponent} from "react-native";
+import React from 'react'
+import {StyleSheet, View, Text, TouchableOpacity} from "react-native";
 
 
 const Header = ({handleNav=()=>null, currentRoute = 'MovieList'}) => {

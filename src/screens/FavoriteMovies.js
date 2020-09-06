@@ -1,5 +1,5 @@
-import React, {useEffect} from 'react';
-import {View, Text, FlatList} from 'react-native';
+import React from 'react';
+import {View, FlatList} from 'react-native';
 import Header from "../components/Header";
 import {connect} from "react-redux";
 import {updateFavoriteMovies} from "../store/actions/moviesAction";

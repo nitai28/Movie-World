@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import {StyleSheet, View, Text, TouchableOpacity, requireNativeComponent, Image} from "react-native";
+import {StyleSheet, View, Text, TouchableOpacity, Image} from "react-native";
 import {config} from '../config'
 
 
