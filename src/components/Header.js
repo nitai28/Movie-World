@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import {StyleSheet, View, Text, TouchableOpacity, requireNativeComponent} from "react-native";
 
 
-const Header = ({navigation, currentRoute = 'MovieList'}) => {
+const Header = ({handleNav=()=>null, currentRoute = 'MovieList'}) => {
 
 
     return (
@@ -11,10 +11,10 @@ const Header = ({navigation, currentRoute = 'MovieList'}) => {
             <View style={styles.headerButtons}>
                 <TouchableOpacity
                     style={currentRoute === 'MovieList' ? {...styles.button, ...styles.selectedButton} : styles.button}
-                    onPress={()=>navigation.navigate('MovieList')}><Text>Movies</Text></TouchableOpacity>
+                    onPress={()=>handleNav('MovieList')}><Text>Movies</Text></TouchableOpacity>
                 <TouchableOpacity
                     style={currentRoute === 'Favorite' ? {...styles.button, ...styles.selectedButton} : styles.button}
-                    onPress={()=>navigation.navigate('Favorite')}><Text>Favorites</Text></TouchableOpacity>
+                    onPress={()=>handleNav('Favorite')}><Text>Favorites</Text></TouchableOpacity>
             </View>
         </View>
     )

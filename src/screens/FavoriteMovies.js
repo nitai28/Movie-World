@@ -2,19 +2,22 @@ import React, {useEffect} from 'react';
 import {View, Text, FlatList} from 'react-native';
 import Header from "../components/Header";
 import {connect} from "react-redux";
-import {fetchMoviesList, updateFavoriteMovies} from "../store/actions/moviesAction";
+import {updateFavoriteMovies} from "../store/actions/moviesAction";
 import MovieSmallDisplay from "../components/MoveSmallDisplay";
 
 
-const FavoriteMovies = ({navigation,updateFavoriteList, favoriteMovies}) => {
+const FavoriteMovies = ({navigation, updateFavoriteList, favoriteMovies}) => {
 
     const handleFavorite = (movie) => {
         updateFavoriteList(movie)
     };
 
+
     return (
         <View>
-            <Header currentRoute={'Favorite'} navigation={navigation}/>
+            <Header
+                currentRoute={'Favorite'}
+                handleNav={(value) => navigation.navigate(value)}/>
             {favoriteMovies.length > 0 &&
             <FlatList
                 data={favoriteMovies}
@@ -34,13 +37,13 @@ const FavoriteMovies = ({navigation,updateFavoriteList, favoriteMovies}) => {
 const mapStateToProps = state => {
     const {favoriteMovies} = state.movie;
     return {
-         favoriteMovies
+        favoriteMovies
     }
 };
 
 const mapDispatchToProps = dispatch => {
     return {
-        updateFavoriteList: () => dispatch(updateFavoriteMovies())
+        updateFavoriteList: (movie) => dispatch(updateFavoriteMovies(movie))
     }
 };
 

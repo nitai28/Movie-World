@@ -18,7 +18,7 @@ const MovieSmallDisplay = ({movie, handleFavorite = () => null, isFavorite = fal
                 <Text>{movie.year}</Text>
                 <Text style={{width: 200}} lineBreakMode={'tail'} numberOfLines={2}>{movie.overview}</Text>
             </View>
-            <TouchableOpacity onPress={() => handleFavorite(movie)}>
+            <TouchableOpacity onPress={()=>handleFavorite(movie)}>
                 <Image resizeMode={'center'} style={styles.movieImage}
                        source={isFavorite ? require('../assets/minus.png') : require('../assets/add.png')}/>
             </TouchableOpacity>
